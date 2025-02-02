@@ -1,0 +1,34 @@
+package(default_visibility = ["//visibility:public"])
+
+# Host
+platform(
+    name = "host",
+    constraint_values = ["@platforms//os:linux"],
+    parents = ["@local_config_platform//:host"],
+)
+
+# Platforms
+platform(
+    name = "x86_64-unknown-linux-gnu",
+    constraint_values = [
+        "@platforms//cpu:x86_64",
+        "@platforms//os:linux",
+    ],
+)
+
+# Missing platform created based on 
+# https://blog.consumingchaos.com/posts/nix-bazel-cross-compiling/
+# Used to catch implicit target platform usage
+platform(
+    name = "missing",
+    constraint_values = [
+        ":missing_constraint_value",
+    ],
+)
+
+constraint_setting(name = "missing_constraint_setting")
+
+constraint_value(
+    name = "missing_constraint_value",
+    constraint_setting = ":missing_constraint_setting",
+)
