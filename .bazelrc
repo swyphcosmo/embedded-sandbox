@@ -20,3 +20,6 @@ build --action_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
 # build --host_platform=//bazel/platforms/host
 build --platforms=//bazel/platforms:missing
 build --build_tag_filters=-platform_missing
+
+# ensure that minimal other envvars are passed by clang-tidy run_shell
+common --incompatible_strict_action_env

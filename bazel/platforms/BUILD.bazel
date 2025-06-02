@@ -9,12 +9,29 @@ platform(
 
 # Platforms
 platform(
-    name = "x86_64-unknown-linux-gnu",
+    name = "x86_64_unknown_linux_gnu",
     constraint_values = [
         "@platforms//cpu:x86_64",
         "@platforms//os:linux",
     ],
 )
+
+platform(
+    name = "arm_none_eabi_cortex_m4_m7",
+    constraint_values = [
+        "@platforms//cpu:armv7e-m",
+        "@platforms//os:none",
+    ],
+)
+
+platform(
+    name = "aarch64_unknown_linux_gnu",
+    constraint_values = [
+        "@platforms//cpu:aarch64",
+        "@platforms//os:linux",
+    ],
+)
+
 
 # Missing platform created based on 
 # https://blog.consumingchaos.com/posts/nix-bazel-cross-compiling/
