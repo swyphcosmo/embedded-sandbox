@@ -32,8 +32,7 @@ platform(
     ],
 )
 
-
-# Missing platform created based on 
+# Missing platform created based on
 # https://blog.consumingchaos.com/posts/nix-bazel-cross-compiling/
 # Used to catch implicit target platform usage
 platform(
